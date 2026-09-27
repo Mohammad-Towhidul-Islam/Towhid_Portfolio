@@ -2886,6 +2886,246 @@ body{color:var(--ink);background:#fbfcfe;letter-spacing:-.005em}
   .hero-availability strong{font-size:12px}
 }
 
+
+/* =========================================================
+   FINAL DEVICE RESPONSIVE SYSTEM
+   Desktop / Laptop / Tablet / Mobile
+   ========================================================= */
+*,
+*::before,
+*::after{box-sizing:border-box}
+
+html{width:100%;overflow-x:hidden}
+body{width:100%;min-width:0;overflow-x:hidden}
+img{max-width:100%;height:auto}
+button,a{-webkit-tap-highlight-color:transparent}
+
+.mobile-menu-toggle{
+  display:none;
+  width:44px;
+  height:44px;
+  flex:0 0 44px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:rgba(255,255,255,.9);
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(15,23,42,.06);
+}
+.mobile-menu-toggle span{
+  display:block;
+  width:18px;
+  height:2px;
+  border-radius:4px;
+  background:#172033;
+  transition:.22s ease;
+}
+.mobile-menu-toggle.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.mobile-menu-toggle.is-open span:nth-child(2){opacity:0}
+.mobile-menu-toggle.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+@media (min-width:981px){
+  .nav-links{
+    display:flex!important;
+    position:static!important;
+    flex-direction:row!important;
+    width:auto!important;
+    padding:0!important;
+    border:0!important;
+    box-shadow:none!important;
+    background:transparent!important;
+  }
+}
+
+/* Large laptop: keep the hero balanced and avoid cramped project cards. */
+@media (min-width:981px) and (max-width:1180px){
+  .container{width:min(100% - 44px,1120px)}
+  .hero-premium-grid{gap:34px!important}
+  .hero-premium-copy h1{font-size:clamp(48px,6vw,68px)!important}
+  .project-grid,.design-project-grid{grid-template-columns:repeat(2,1fr)!important}
+  .skills-wrap{grid-template-columns:repeat(2,1fr)!important}
+  .hero-availability{right:0!important}
+}
+
+/* Tablet + phone navigation */
+@media (max-width:980px){
+  .nav-inner{
+    position:relative;
+    min-height:68px!important;
+    padding:10px 0!important;
+  }
+  .mobile-menu-toggle{display:flex}
+  .nav-links{
+    display:none!important;
+    position:absolute!important;
+    top:calc(100% + 8px);
+    left:0;
+    right:0;
+    z-index:200;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    gap:4px!important;
+    padding:10px!important;
+    border:1px solid var(--border)!important;
+    border-radius:16px!important;
+    background:rgba(255,255,255,.97)!important;
+    box-shadow:0 20px 45px rgba(15,23,42,.13)!important;
+    backdrop-filter:blur(18px);
+  }
+  .nav-links.mobile-open{display:flex!important}
+  .nav-links a{
+    display:flex!important;
+    align-items:center!important;
+    min-height:44px;
+    padding:0 13px!important;
+    border-radius:10px;
+  }
+  .nav-links a:hover{background:#eef4ff}
+  .hero-premium-grid{
+    grid-template-columns:1fr!important;
+    gap:34px!important;
+  }
+  .hero-premium-copy{text-align:center!important}
+  .hero-premium-copy p{margin-left:auto;margin-right:auto}
+  .hero-actions{justify-content:center}
+  .home-social{justify-content:center}
+  .modern-hero-visual{
+    width:min(100%,540px);
+    min-height:500px!important;
+    margin:0 auto!important;
+  }
+  .hero-portrait-wrap{width:min(100%,400px)!important}
+  .hero-orbit-one{width:455px!important;height:455px!important}
+  .hero-orbit-two{width:360px!important;height:360px!important}
+  .project-grid,.design-project-grid{grid-template-columns:repeat(2,1fr)!important}
+  .skills-wrap{grid-template-columns:repeat(2,1fr)!important}
+  .about-grid,.grid-2,.contact-card{grid-template-columns:1fr!important}
+}
+
+/* Phones */
+@media (max-width:620px){
+  .container{width:calc(100% - 24px)!important}
+  .nav-inner{min-height:64px!important}
+  .brand span{
+    font-size:13px!important;
+    max-width:calc(100vw - 115px)!important;
+  }
+  .brand img{width:36px!important;height:36px!important}
+  .hero-premium{
+    padding:44px 0 48px!important;
+  }
+  .hero-premium-copy h1{
+    font-size:clamp(34px,10.8vw,48px)!important;
+    line-height:1.04!important;
+    letter-spacing:-.055em!important;
+  }
+  .hero-premium-copy p{
+    font-size:15px!important;
+    line-height:1.7!important;
+  }
+  .role-premium{
+    width:auto!important;
+    max-width:100%!important;
+    display:inline-flex!important;
+    text-align:center;
+    font-size:11px!important;
+    padding:8px 11px!important;
+  }
+  .hero-actions{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:10px!important;
+    width:100%;
+  }
+  .hero-actions .btn{
+    width:100%!important;
+    min-height:48px!important;
+  }
+  .home-social{
+    display:grid!important;
+    grid-template-columns:repeat(3,1fr)!important;
+    gap:8px!important;
+    width:100%;
+  }
+  .home-social a{
+    width:100%!important;
+    min-height:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:7px 5px!important;
+    font-size:12px;
+  }
+  .modern-hero-visual{
+    min-height:420px!important;
+    width:100%!important;
+    margin-top:0!important;
+  }
+  .hero-portrait-wrap{width:min(100%,330px)!important}
+  .hero-portrait{
+    width:84%!important;
+    height:84%!important;
+    border-width:7px!important;
+  }
+  .hero-orbit-one{width:360px!important;height:360px!important}
+  .hero-orbit-two{width:292px!important;height:292px!important}
+  .hero-dot-one{width:13px!important;height:13px!important}
+  .hero-dot-two{width:9px!important;height:9px!important}
+  .hero-open-note{
+    right:2%!important;
+    top:2%!important;
+    font-size:10px!important;
+  }
+  .hero-availability{
+    right:50%!important;
+    transform:translateX(50%);
+    bottom:2%!important;
+    min-width:0!important;
+    width:min(92%,285px)!important;
+    padding:10px 12px!important;
+  }
+  .hero-availability strong{font-size:11px!important}
+  .hero-availability small{font-size:10px!important}
+
+  .section{padding:56px 0!important}
+  .section-heading{margin-bottom:24px!important}
+  .section-heading h2{font-size:clamp(27px,8vw,34px)!important}
+  .section-heading p{font-size:14px!important}
+
+  .project-grid,.design-project-grid,.skills-wrap{
+    grid-template-columns:1fr!important;
+  }
+  .project-card,.skill-box{min-width:0}
+  .project-intro-card{padding:20px!important}
+  .project-summary-row{grid-template-columns:1fr!important}
+  .project-category-head{padding:16px!important}
+  .project-category-head h3{font-size:21px!important}
+  .timeline-item{padding:20px!important}
+  .card{padding:20px!important}
+  .contact-card{padding:22px!important}
+  .contact-links a{
+    min-width:0!important;
+    overflow-wrap:anywhere!important;
+  }
+}
+
+/* Very small phones */
+@media (max-width:390px){
+  .container{width:calc(100% - 18px)!important}
+  .brand span{font-size:12px!important}
+  .hero-premium-copy h1{font-size:31px!important}
+  .home-social{grid-template-columns:1fr!important}
+  .home-social a{min-height:42px}
+  .modern-hero-visual{min-height:385px!important}
+  .hero-portrait-wrap{width:285px!important}
+  .hero-orbit-one{width:315px!important;height:315px!important}
+  .hero-orbit-two{width:255px!important;height:255px!important}
+  .hero-availability{width:94%!important}
+}
+
 </style></head>
 <body>
 <header class="nav">
@@ -2894,7 +3134,13 @@ body{color:var(--ink);background:#fbfcfe;letter-spacing:-.005em}
 <img alt="Mohammad Towhidul Islam Logo" src="5.png" style="width:42px;height:42px;border-radius:8px;object-fit:cover;"/>
 <span>Mohammad Towhidul Islam</span>
 </a>
-<nav aria-label="Primary navigation" class="nav-links"><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#publications">Research</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a></nav>
+<button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
+<span></span><span></span><span></span>
+</button>
+<nav aria-label="Primary navigation" class="nav-links">
+<a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a>
+<a href="#publications">Research</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a>
+</nav>
 </div>
 </header>
 <main id="home">
@@ -3214,5 +3460,38 @@ body{color:var(--ink);background:#fbfcfe;letter-spacing:-.005em}
 </section>
 </main>
 <footer class="footer">© 2026 Mohammad Towhidul Islam · Full-Stack Developer &amp; AI/ML Researcher</footer>
+
+<script>
+(function(){
+  const toggle = document.querySelector('.mobile-menu-toggle');
+  const menu = document.querySelector('.nav-links');
+  if(!toggle || !menu) return;
+
+  toggle.addEventListener('click', function(){
+    const open = menu.classList.toggle('mobile-open');
+    toggle.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+  });
+
+  menu.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click', function(){
+      menu.classList.remove('mobile-open');
+      toggle.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded','false');
+      toggle.setAttribute('aria-label','Open navigation menu');
+    });
+  });
+
+  window.addEventListener('resize', function(){
+    if(window.innerWidth > 980){
+      menu.classList.remove('mobile-open');
+      toggle.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded','false');
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
